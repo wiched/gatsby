@@ -1,0 +1,342 @@
+$menubg: #252525
+$heading__dark: #2f2f2f
+$gray: #ecebeb
+
+*
+  box-sizing: border-box
+  padding: 0
+  margin: 0
+  -webkit-font-smoothing: antialiased !important
+  -moz-osx-font-smoothing: grayscale !important
+  -webkit-text-stroke: 0.45px !important
+  -webkit-text-stroke: 0.45px rgba(0, 0, 0, 0.1)  !important
+  text-rendering: optimizeLegibility  !important
+  font: 14px/18px 'Open Sans', sans-serif
+  text-shadow:1px 1px 1px 1px rgba(0,0,0,0.005) !important
+
+body
+  background: $gray
+  color: #666
+
+h1, h2, h3, h4, h5, h6
+  line-height: 1em
+  color: $heading__dark
+  font-family: 'Open Sans',sans-serif
+  font-weight: bold
+  margin-top: 30px
+
+h2
+  font-size: 25px
+
+.h2__home
+  margin-top: 0px
+  margin-bottom: 25px
+
+.link1
+  color: $heading__dark
+  font-size: 15px
+  font-weight: bold
+  line-height: 20px
+  text-decoration: none
+  margin-top: 10px
+  display: inline-block
+  &:hover
+    text-decoration: underline
+    text-decoration-line: underline
+    text-decoration-style: initial
+    text-decoration-color: initial
+p
+  -webkit-text-stroke: .025em rgba(51,51,51,0.40) !important
+  overflow-wrap: break-word
+  word-wrap: break-word
+  -webkit-hyphens: auto
+  -ms-hyphens: auto
+  -moz-hyphens: auto
+  hyphens: auto
+  line-height: 175%
+
+.p6
+  padding-top: 16px
+  line-height: 175%
+
+.navbar
+  font-size: 22px
+  background: $menubg
+  padding-bottom: 10px
+
+#main-nav
+  list-style-type: none
+  display: none
+  flex-direction: column
+  li
+    text-align: center
+    margin: 15px auto
+
+.nav-links
+  text-decoration: none
+  color: rgba(255, 255, 255, 0.7)
+
+#logo
+  text-decoration: none
+  color: rgba(255, 255, 255, 0.7)
+  &:hover
+    color: rgba(255, 255, 255, 1)
+
+.nav-links:hover
+  color: rgba(255, 255, 255, 1)
+
+#logo
+  display: inline-block
+  font-size: 22px
+  margin-top: 10px
+  margin-left: 20px
+  position: absolute
+  left: 0
+  justify-content: flex-start
+
+#navbar-toggle
+  position: absolute
+  top: 10px
+  right: 20px
+  cursor: pointer
+  color: rgba(255, 255, 255, 0.8)
+  font-size: 24px
+  &:hover
+    color: rgba(255, 255, 255, 1)
+
+@media screen and (min-width: 768px)
+  .navbar
+    display: flex
+    justify-content: center
+    padding-bottom: 0
+    height: 83px
+    align-items: center
+  #main-nav
+    display: flex !important
+    margin-right: 30px
+    flex-direction: row
+    justify-content: flex-end
+    li
+      margin: 0
+  .nav-links
+    margin-left: 60px
+  #logo
+    margin-top: 0
+  #navbar-toggle
+    display: none
+
+.headerTitle
+  color: $gray
+  font-size: 24px
+  line-height: 30px
+  max-width: 400px !important
+
+.uppercase
+  text-transform: uppercase
+
+.bold
+  display: inline-block
+  margin: 10px 0px
+  clear: both
+  font-size: 2rem
+  line-height: 36px
+
+.smaller
+  font-size: 22px;
+
+.padding
+  &__none
+    padding-left: 0 !important
+    padding-right: 0 !important
+
+.margin
+  &__top
+    &-none
+      margin-top: 0
+    &-header
+      margin-top: 83px
+
+strong
+  font-weight: bold
+
+@media only screen and (max-width: 1460px) and (min-width: 900px)
+  .headerWrapper
+    background-position-x: 52% !important
+    background-position-y: 355px !important
+    height: 314px !important
+    background-repeat: initial !important
+
+@media only screen and (max-width: 900px)
+  .margin
+    &__top
+      &-header
+        margin-top: 50px
+  .p6
+    padding-left: 10px
+  p
+    padding: 10px
+
+@media only screen and (min-width: 992px)
+  .container
+    max-width: 100%
+    width: 976px !important
+.animated
+  -webkit-animation-duration: 1s
+  animation-duration: 1s
+  -webkit-animation-fill-mode: both
+  animation-fill-mode: both
+  &.infinite
+    -webkit-animation-iteration-count: infinite
+    animation-iteration-count: infinite
+  &.hinge
+    -webkit-animation-duration: 2s
+    animation-duration: 2s
+  &.flipOutX, &.flipOutY, &.bounceIn, &.bounceOut
+    -webkit-animation-duration: .75s
+    animation-duration: .75s
+
+@-webkit-keyframes bounce
+  from, 20%, 53%, 80%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+  40%, 43%
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    -webkit-transform: translate3d(0, -30px, 0)
+    transform: translate3d(0, -30px, 0)
+
+  70%
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    -webkit-transform: translate3d(0, -15px, 0)
+    transform: translate3d(0, -15px, 0)
+
+  90%
+    -webkit-transform: translate3d(0, -4px, 0)
+    transform: translate3d(0, -4px, 0)
+
+
+@keyframes bounce
+  from, 20%, 53%, 80%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    -webkit-transform: translate3d(0, 0, 0)
+    transform: translate3d(0, 0, 0)
+
+  40%, 43%
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    -webkit-transform: translate3d(0, -30px, 0)
+    transform: translate3d(0, -30px, 0)
+
+  70%
+    -webkit-animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    animation-timing-function: cubic-bezier(0.755, 0.05, 0.855, 0.06)
+    -webkit-transform: translate3d(0, -15px, 0)
+    transform: translate3d(0, -15px, 0)
+
+  90%
+    -webkit-transform: translate3d(0, -4px, 0)
+    transform: translate3d(0, -4px, 0)
+
+
+.bounce
+  -webkit-animation-name: bounce
+  animation-name: bounce
+  -webkit-transform-origin: center bottom
+  transform-origin: center bottom
+
+
+@-webkit-keyframes bounceInLeft
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  0%
+    opacity: 0
+    -webkit-transform: translate3d(-3000px, 0, 0)
+    transform: translate3d(-3000px, 0, 0)
+
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(25px, 0, 0)
+    transform: translate3d(25px, 0, 0)
+
+  75%
+    -webkit-transform: translate3d(-10px, 0, 0)
+    transform: translate3d(-10px, 0, 0)
+
+  90%
+    -webkit-transform: translate3d(5px, 0, 0)
+    transform: translate3d(5px, 0, 0)
+
+  to
+    -webkit-transform: none
+    transform: none
+
+
+@keyframes bounceInLeft
+  from, 60%, 75%, 90%, to
+    -webkit-animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+    animation-timing-function: cubic-bezier(0.215, 0.61, 0.355, 1)
+
+  0%
+    opacity: 0
+    -webkit-transform: translate3d(-3000px, 0, 0)
+    transform: translate3d(-3000px, 0, 0)
+
+  60%
+    opacity: 1
+    -webkit-transform: translate3d(25px, 0, 0)
+    transform: translate3d(25px, 0, 0)
+
+  75%
+    -webkit-transform: translate3d(-10px, 0, 0)
+    transform: translate3d(-10px, 0, 0)
+
+  90%
+    -webkit-transform: translate3d(5px, 0, 0)
+    transform: translate3d(5px, 0, 0)
+
+  to
+    -webkit-transform: none
+    transform: none
+
+
+.bounceInLeft
+  -webkit-animation-name: bounceInLeft
+  animation-name: bounceInLeft
+
+@-webkit-keyframes fadeInRight
+  from
+    opacity: 0
+    -webkit-transform: translate3d(100%, 0, 0)
+    transform: translate3d(100%, 0, 0)
+
+  to
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+
+@keyframes fadeInRight
+  from
+    opacity: 0
+    -webkit-transform: translate3d(100%, 0, 0)
+    transform: translate3d(100%, 0, 0)
+
+  to
+    opacity: 1
+    -webkit-transform: none
+    transform: none
+
+
+.fadeInRight
+  -webkit-animation-name: fadeInRight
+  animation-name: fadeInRight
+
+
+
