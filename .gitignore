@@ -2,7 +2,8 @@
 .cache
 node_modules
 yarn-error.log
-
+.vscode
+*.zip
 # Build directory
 /public
 .DS_Store
