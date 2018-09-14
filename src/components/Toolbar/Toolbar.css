@@ -1,11 +1,11 @@
-
 .toolbar {
   position: fixed;
   top: 0;
   left: 0;
   width: 100%;
-  background: #2A2A2A;
+  background: #2a2a2a;
   height: 83px;
+  z-index: 1;
 }
 
 .toolbar__navigation {
@@ -44,7 +44,7 @@
   color: #828181;
   text-decoration: none;
   font-size: 1.4rem;
-  line-height: 83px
+  line-height: 83px;
 }
 
 .toolbar_navigation-items a:hover,

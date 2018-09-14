@@ -1,12 +1,12 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import './footer.sass'
+import styles from './footer.sass'
 
 export default class Footer extends Component {
   render() {
     return (
       <footer>
-        <Grid fluid>
+        <Grid fluid className={styles.footer}>
           <Grid>
             <Row>
               <Col xs={12} md={3}>
