@@ -7,7 +7,7 @@ import Layout from '../components/layout'
 class Services extends Component {
   render() {
     const { data } = this.props
-    const webdev = data.fluidImages.childImageSharp.fluid
+    const webdev = data.fluidImages.childImageSharp.fixed
 
     return (
       <Layout>
@@ -105,9 +105,10 @@ class Services extends Component {
                               sizes={webdev.sizes}
                             />
 
-                            <img alt="Изработка на уеб сайт" src={webdev.src} />
+                            <Img alt="Изработка на уеб сайт" fixed={webdev} />
                           </picture>
-                          {console.log(webdev)}
+
+                          {console.log(data.fluidImages.childImageSharp.fixed)}
                         </a>
                       </figure>
                       <h3>
@@ -324,23 +325,8 @@ export const pageQuery = graphql`
     }
     fluidImages: file(relativePath: { regex: "/web-development/" }) {
       childImageSharp {
-        fluid(duotone: { highlight: "#f00e2e", shadow: "#192550" }) {
-          base64
-          aspectRatio
-          src
-          srcSet
-          sizes
-        }
-      }
-    }
-    fluidDuotone: file(relativePath: { regex: "/web-development/" }) {
-      childImageSharp {
-        fluid(
-          maxWidth: 120
-          duotone: { highlight: "#0ec4f1", shadow: "#192550" }
-          traceSVG: { color: "#1E2151" }
-        ) {
-          ...GatsbyImageSharpFluid_tracedSVG
+        fixed(width: 200) {
+          ...GatsbyImageSharpFixed
         }
       }
     }
