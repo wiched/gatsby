@@ -20,7 +20,7 @@ const toolbar = props => (
           <li>
             <Link
               to="/"
-              className="bounce animated"
+              activeClassName="fadeInDownBig animated"
               activeStyle={{ color: 'white' }}
             >
               Home
@@ -67,6 +67,7 @@ const toolbar = props => (
               className="bounce animated"
               to="/contact"
               activeStyle={{ color: 'white' }}
+              activeClassName="jackInTheBox animated"
             >
               Contact
             </Link>

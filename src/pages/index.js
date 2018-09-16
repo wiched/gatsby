@@ -17,7 +17,7 @@ class IndexPage extends Component {
     return (
       <Layout>
         <aside>
-          <Grid fluid className="headerWrapper">
+          <Grid fluid className="headerWrapper headerWrapper__index">
             <Grid>
               <Row className="full">
                 <Col md={9} className="headerTitle wow bounceInLeft">
@@ -76,7 +76,7 @@ class IndexPage extends Component {
                               Internet? &nbsp;
                             </div>
                           </Link>
-                          <Link to="/contacts" role="button">
+                          <Link to="/contact" role="button">
                             <span className="red">contact us now</span>
                           </Link>
                         </span>

@@ -1,15 +1,18 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 //import { Link } from 'gatsby'
-//import Img from 'gatsby-image'
+import Img from 'gatsby-image'
 
 import Layout from '../components/layout'
 class ContactPage extends Component {
   render() {
+    const { data } = this.props
+    const mail = data.mail.childImageSharp.fluid
+
     return (
       <Layout>
         <aside>
-          <Grid fluid className="headerWrapper">
+          <Grid fluid className="headerWrapper headerWrapper__contact">
             <Grid>
               <Row className="full">
                 <Col md={9} className="headerTitle wow bounceInLeft">
@@ -33,11 +36,32 @@ class ContactPage extends Component {
                   <h2 className="h2__home">Contact Us</h2>
                 </Col>
                 <Col md={7} className="col__order-blog">
-                  <h2 className="h2__home">Request a quote</h2>
+                  <h2 className="h2__home">Send us a message</h2>
                 </Col>
                 <Col md={5}>
                   <ul>
-                    <li>Test</li>
+                    <li>Manitoba Way, Worthing, West Sussex, BN13 2TJ</li>
+                    <li>(+44) 7561 877 567</li>
+                    <li>
+                      <a href="mailto:office@finedigital.co.uk">
+                        <Img fluid={mail} className="mail" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/Fine.Digital.UK/?ref=br_rs">
+                        FB/Fine.Digital.UK
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/Fine.Digital.UK/?ref=br_rs">
+                        Google+
+                      </a>
+                    </li>
+                    <li>
+                      <a href="https://www.facebook.com/Fine.Digital.UK/?ref=br_rs">
+                        LinkedIn
+                      </a>
+                    </li>
                   </ul>
                 </Col>
 
@@ -85,3 +109,15 @@ class ContactPage extends Component {
 }
 
 export default ContactPage
+
+export const pageQuery = graphql`
+  query {
+    mail: file(relativePath: { regex: "/mail.png/" }) {
+      childImageSharp {
+        fluid(maxWidth: 222) {
+          ...GatsbyImageSharpFluid
+        }
+      }
+    }
+  }
+`
