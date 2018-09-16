@@ -1,21 +1,33 @@
 import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
-import styles from './footer.sass'
+import styled from 'styled-components'
+
+const GridFooter = styled(Grid)`
+  margin-top: 50px;
+  background-color: #2a2a2a;
+  height: 97px;
+  color: #fff;
+  display: flex;
+  align-items: center;
+`
+const ColFooter = styled(Col)`
+  text-align: center;
+`
 
 export default class Footer extends Component {
   render() {
     return (
       <footer>
-        <Grid fluid className={styles.footer}>
+        <GridFooter fluid className={styles.footer}>
           <Grid>
             <Row>
-              <Col xs={12} md={3}>
+              <ColFooter xs={12} md={3}>
                 <span>2016 - 2018 ©</span>
                 <span>
                   <a href="/">FineDigital</a>
                 </span>
-              </Col>
-              <Col xs={12} md={3}>
+              </ColFooter>
+              <ColFooter xs={12} md={3}>
                 <span>
                   <a href="/">
                     <span role="img" aria-label="Envelope">
@@ -24,7 +36,7 @@ export default class Footer extends Component {
                     office@finedigital.co.uk
                   </a>
                 </span>
-              </Col>
+              </ColFooter>
               <Col xs={12} md={3}>
                 <span>
                   <a href="/">Privacy Policy</a>
@@ -32,7 +44,7 @@ export default class Footer extends Component {
               </Col>
             </Row>
           </Grid>
-        </Grid>
+        </GridFooter>
       </footer>
     )
   }
