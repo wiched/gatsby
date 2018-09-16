@@ -2,9 +2,88 @@ import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 //import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-import './contact.sass'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import HeaderBG from '../images/contacts-slider.jpg'
+
+const HeaderWrapper = styled(Grid)`
+  height: 380px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  background: url(${HeaderBG});
+  > a
+  text-decoration: none
+  color: #2f2f2f
+`
+
+const Ul = styled.ul`
+  font-family: 'Open Sans' !important;
+  font-size: 16px iImportant;
+`
+
+const Li = styled.li`
+  font-family: 'Open Sans' !important;
+  font-size: 16px iImportant;
+`
+
+const MailImage = styled(Img)`
+  max-width: 222px;
+  margin-top: 10px;
+  margin-bottom: 10px;
+`
+
+const Message = styled.textarea`
+  height: 150px;
+  margin: 0;
+  width: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  resize: none;
+  background: #fff;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  padding: 5px 9px;
+  overflow: auto;
+  color: #6d6d6d;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  display: block;
+  max-width: 540px;
+`
+
+const Input = styled.input`
+  width: 100%;
+  margin-bottom: 15px;
+  outline: none;
+  border: 1px solid #dfdfdf;
+  color: #6d6d6d;
+  background: #fff;
+  font-family: 'Open Sans', sans-serif;
+  font-size: 13px;
+  margin: 0;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+  -o-box-sizing: border-box;
+  -ms-box-sizing: border-box;
+  padding: 5px 9px 7px;
+  max-width: 540px;
+  margin-bottom: 15px;
+  display: inline-block;
+`
+const SubmitInput = styled(Input).attrs({ type: 'submit' })`
+  cursor: pointer;
+  background: #2a2a2a;
+  color: #fff;
+`
 class ContactPage extends Component {
   render() {
     const { data } = this.props
@@ -13,7 +92,7 @@ class ContactPage extends Component {
     return (
       <Layout>
         <aside>
-          <Grid fluid className="headerWrapper__contact">
+          <HeaderWrapper fluid>
             <Grid>
               <Row className="full">
                 <Col md={9} className="headerTitle wow bounceInLeft">
@@ -27,43 +106,43 @@ class ContactPage extends Component {
                 </Col>
               </Row>
             </Grid>
-          </Grid>
+          </HeaderWrapper>
         </aside>
         <main>
           <Grid>
             <section>
               <Row>
-                <Col md={5} className="col__order-services">
-                  <h2 className="h2__home">Contact Us</h2>
+                <Col md={5}>
+                  <h2>Contact Us</h2>
                 </Col>
                 <Col md={7} className="col__order-blog">
-                  <h2 className="h2__home">Send us a message</h2>
+                  <h2>Send us a message</h2>
                 </Col>
                 <Col md={5}>
-                  <ul>
-                    <li>Manitoba Way, Worthing, West Sussex, BN13 2TJ</li>
-                    <li>(+44) 7561 877 567</li>
-                    <li>
+                  <Ul>
+                    <Li>Manitoba Way, Worthing, West Sussex, BN13 2TJ</Li>
+                    <Li>(+44) 7561 877 567</Li>
+                    <Li>
                       <a href="mailto:office@finedigital.co.uk">
-                        <Img fluid={mail} className="mail" />
+                        <MailImage fluid={mail} />
                       </a>
-                    </li>
-                    <li>
+                    </Li>
+                    <Li>
                       <a href="https://www.facebook.com/Fine.Digital.UK/?ref=br_rs">
                         FB/Fine.Digital.UK
                       </a>
-                    </li>
-                    <li>
+                    </Li>
+                    <Li>
                       <a href="https://www.facebook.com/Fine.Digital.UK/?ref=br_rs">
                         Google+
                       </a>
-                    </li>
-                    <li>
+                    </Li>
+                    <Li>
                       <a href="https://www.facebook.com/Fine.Digital.UK/?ref=br_rs">
                         LinkedIn
                       </a>
-                    </li>
-                  </ul>
+                    </Li>
+                  </Ul>
                 </Col>
 
                 <Col md={7}>
@@ -73,30 +152,30 @@ class ContactPage extends Component {
                       method="POST"
                       acceptCharset="UTF-8"
                     >
-                      <input
+                      <Input
                         type="text"
                         name="yourName"
                         placeholder="Your Name: "
                       />
-                      <input
+                      <Input
                         type="email"
                         name="email"
                         placeholder="Your Email: "
                       />
 
-                      <input
+                      <Input
                         type="tel"
                         name="number"
                         placeholder="Your Number: "
                       />
 
-                      <textarea
+                      <Message
                         name="message"
                         placeholder="Write your message here"
                       />
-                      <input type="hidden" name="_gotcha" />
+                      <Input type="hidden" name="_gotcha" />
                       <br />
-                      <input type="submit" value="Send" />
+                      <SubmitInput value="Send" />
                     </form>
                   </section>
                 </Col>
