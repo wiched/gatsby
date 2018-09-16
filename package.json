@@ -38,7 +38,6 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "devDependencies": {
-    "ngrok": "^3.0.1",
     "prettier": "^1.14.2"
   },
   "repository": {
