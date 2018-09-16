@@ -18,7 +18,7 @@ export default class Footer extends Component {
   render() {
     return (
       <footer>
-        <GridFooter fluid className={styles.footer}>
+        <GridFooter fluid>
           <Grid>
             <Row>
               <ColFooter xs={12} md={3}>
