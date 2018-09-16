@@ -7,6 +7,11 @@ import styled from 'styled-components'
 import Layout from '../components/layout'
 import HeaderBG from '../images/contacts-slider.jpg'
 
+const H2 = styled.h2`
+  margin-top: 0px;
+  margin-bottom: 25px;
+`
+
 const HeaderWrapper = styled(Grid)`
   height: 380px;
   background-position: center center;
@@ -113,10 +118,10 @@ class ContactPage extends Component {
             <section>
               <Row>
                 <Col md={5}>
-                  <h2>Contact Us</h2>
+                  <H2>Contact Us</H2>
                 </Col>
                 <Col md={7} className="col__order-blog">
-                  <h2>Send us a message</h2>
+                  <H2>Send us a message</H2>
                 </Col>
                 <Col md={5}>
                   <Ul>

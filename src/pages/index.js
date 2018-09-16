@@ -2,10 +2,195 @@ import React, { Component } from 'react'
 import { Grid, Row, Col } from 'react-flexbox-grid'
 import { Link } from 'gatsby'
 import Img from 'gatsby-image'
-
-import './index.sass'
+import styled from 'styled-components'
 
 import Layout from '../components/layout'
+import HeaderBG from '../images/home-slider.jpg'
+
+const HeaderWrapper = styled(Grid)`
+  height: 380px;
+  background-position: center center;
+  background-repeat: no-repeat;
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+  margin-bottom: 20px;
+  background: url(${HeaderBG});
+  @media only screen and (max-width: 1460px) and (min-width: 900px) {
+    background-position-x: 52% !important;
+    background-position-y: 355px !important;
+    background-repeat: repeat !important;
+    height: 314px !important;
+  }
+  @media only screen and (max-width: 992px) {
+    display: none !important;
+  }
+`
+
+const HomeCallTo = styled.span`
+  margin-top: 15px;
+  margin-bottom: 15px;
+  font-size: 18px;
+  -moz-transition: all 0.5s ease;
+  -ms-transition: all 0.5s ease;
+  -o-transition: all 0.5s ease;
+  -webkit-transition: all 0.5s ease;
+  transition: all 0.5s ease;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+  @media only screen and (max-width: 992px) {
+    margin-bottom: 50px;
+  }
+`
+
+const HomeWrapper = styled.span`
+  margin-top: 15px;
+  margin-bottom: 15px;
+  padding: 15px;
+`
+
+const Punchline = styled.div`
+  font-size: 18px;
+  margin-bottom: 25px;
+  line-height: 25px;
+  text-decoration: underline;
+  color: #000;
+  @media only screen and (min-width: 900px) {
+    display: inline-block;
+    margin-bottom: 0;
+    text-decoration: none !important;
+  }
+`
+
+const RedButton = styled.span`
+  color: white;
+  text-transform: uppercase;
+  font-size: 16px;
+  font-weight: bold;
+  text-decoration: none;
+  background-color: #663399;
+  padding: 15px;
+  text-align: center;
+  &::hover {
+    cursor: pointer !important;
+  }
+  @media only screen and (max-width: 767px) {
+    padding: 15px 50px;
+  }
+  @media only screen and (min-width: 900px) {
+    display: inline-block;
+    margin-bottom: 0;
+    text-decoration: none !important;
+  }
+`
+
+const H3A = styled.a`
+  @media only screen and (max-width: 767px) {
+    border-bottom: 1px solid #2a2a2a;
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`
+
+const H4A = styled.a`
+  @media only screen and (max-width: 767px) {
+    margin-left: 10px;
+    margin-right: 10px;
+  }
+`
+const HomeImage = styled(Img)`
+  width: 89%;
+  height: auto;
+  @media only screen and (max-width: 992px) {
+    width: 100% !important;
+    height: auto;
+    padding: 0 10px 0 10px;
+  }
+`
+
+const InnerBox = styled.div`
+  color: #b3b2b2;
+  margin-bottom: 3px;
+  & time {
+    font-size: 11px;
+  }
+  @media only screen and (max-width: 767px) {
+    padding-left: 10px;
+  }
+`
+
+const InnerBlock = styled.div`
+  margin-bottom: 25px;
+  & img {
+    max-width: 100%;
+    width: 90vw;
+    height: auto;
+    display: flex;
+  }
+
+  }
+`
+
+const PageBox = styled.div`
+  margin-top: 10px;
+  border-bottom: 1px dotted;
+  @media only screen and (max-width: 767px) {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-content: center;
+    padding: 0 10px 0 10px;
+    & h4 {
+      margin-top: 0;
+    }
+  }
+`
+
+const GridScale = styled(Grid)`
+  transition: all 0.5s ease;
+  &:hover {
+    transform: scale(1.3, 1.2);
+  }
+`
+const Blog = styled(Col)`
+  padding-left: 0;
+  @media only screen and (max-width: 767px) {
+    order: 3;
+    margin-top: 25px;
+    padding-left: 16px;
+    & h2 {
+      margin-bottom: 0;
+    }
+  }
+`
+const Services = styled(Col)`
+  & h2 {
+    padding-left: 16px;
+  }
+`
+const Clients = styled(Row)`
+  & h2 {
+    order: 2;
+    margin-top: 25px;
+  }
+`
+
+const Figure = styled.figure`
+  @media only screen and (max-width: 992px) {
+    flex-direction: column;
+    display: flex;
+    align-content: center;
+    justify-content: center;
+    margin: 0 10px 0 10px;
+  }
+`
+const ColMaxHeight450 = styled(Col)`
+  @media only screen and (min-width: 992px) {
+    max-height: 450px;
+  }
+`
+
 class IndexPage extends Component {
   render() {
     const { data } = this.props
@@ -17,7 +202,7 @@ class IndexPage extends Component {
     return (
       <Layout>
         <aside>
-          <Grid fluid className="headerWrapper headerWrapper__index">
+          <HeaderWrapper fluid>
             <Grid>
               <Row className="full">
                 <Col md={9} className="headerTitle wow bounceInLeft">
@@ -31,7 +216,7 @@ class IndexPage extends Component {
                 </Col>
               </Row>
             </Grid>
-          </Grid>
+          </HeaderWrapper>
         </aside>
         <main>
           <Grid>
@@ -65,25 +250,25 @@ class IndexPage extends Component {
                   and enjoyable to work with.
                 </p>
                 <br />
-                <Grid className="scale">
+                <GridScale>
                   <Row>
                     <Col md={12}>
-                      <span className="homeCallTo">
-                        <span className="homeWrapper">
+                      <HomeCallTo>
+                        <HomeWrapper>
                           <Link to="/contact">
-                            <div className="punchline">
+                            <Punchline>
                               Do you want your business to succeed on the
                               Internet? &nbsp;
-                            </div>
+                            </Punchline>
                           </Link>
                           <Link to="/contact" role="button">
-                            <span className="red">contact us now</span>
+                            <RedButton>contact us now</RedButton>
                           </Link>
-                        </span>
-                      </span>
+                        </HomeWrapper>
+                      </HomeCallTo>
                     </Col>
                   </Row>
-                </Grid>
+                </GridScale>
               </Col>
             </Row>
           </Grid>
@@ -91,35 +276,32 @@ class IndexPage extends Component {
           <Grid>
             <section>
               <Row>
-                <Col md={9} className="col__order-services">
+                <Services md={9}>
                   <h2 className="h2__home">Services</h2>
-                </Col>
-                <Col md={3} className="col__order-blog">
+                </Services>
+                <Blog md={3}>
                   <h2 className="h2__home">Blog</h2>
-                </Col>
-                <Col md={3} className="col__order-development">
+                </Blog>
+                <ColMaxHeight450 md={3} className="col__order-development">
                   <article>
-                    <div className="inner-block">
-                      <figure className="page1-img1">
+                    <InnerBlock>
+                      <Figure className="page1-img1">
                         <a
                           rel="bookmark"
                           href="/uslugi/izrabotka-na-sait"
                           className="link1"
                         >
-                          <Img
-                            fluid={{ ...webdev, sizes }}
-                            className="homeImage"
-                          />
+                          <HomeImage fluid={{ ...webdev, sizes }} />
                         </a>
-                      </figure>
+                      </Figure>
                       <h3>
-                        <a
+                        <H3A
                           rel="bookmark"
                           href="/uslugi/izrabotka-na-sait"
                           className="link1"
                         >
                           Web Development
-                        </a>
+                        </H3A>
                       </h3>
                       <p className="p6">
                         We develop any kind of websites for you and your
@@ -128,34 +310,34 @@ class IndexPage extends Component {
                         engines and customers for quality, relevance, popularity
                         and speed. Do not wait - everyone is online!
                       </p>
-                    </div>
+                    </InnerBlock>
                   </article>
-                </Col>
+                </ColMaxHeight450>
 
-                <Col md={3}>
+                <ColMaxHeight450 md={3}>
                   <article>
-                    <div className="inner-block">
-                      <figure className="page1-img1">
+                    <InnerBlock>
+                      <Figure className="page1-img1">
                         <a
                           rel="bookmark"
                           href="/uslugi/izrabotka-na-sait"
                           className="link1"
                         >
-                          <Img
+                          <HomeImage
                             alt="Изработка на уеб сайт"
                             fluid={seo}
                             className="homeImage"
                           />
                         </a>
-                      </figure>
+                      </Figure>
                       <h3>
-                        <a
+                        <H3A
                           rel="bookmark"
                           href="/uslugi/izrabotka-na-sait"
                           className="link1"
                         >
                           SEO optimization
-                        </a>
+                        </H3A>
                       </h3>
                       <p className="p6">
                         Seo optimization and marketing are some of the best ways
@@ -164,26 +346,26 @@ class IndexPage extends Component {
                         business. SEO is the mandatory ingredient of if you want
                         to be successful and popular!
                       </p>
-                    </div>
+                    </InnerBlock>
                   </article>
-                </Col>
+                </ColMaxHeight450>
 
-                <Col md={3}>
+                <ColMaxHeight450 md={3}>
                   <article>
-                    <div className="inner-block">
-                      <figure className="page1-img1">
+                    <InnerBlock>
+                      <Figure className="page1-img1">
                         <a
                           rel="bookmark"
                           href="/uslugi/izrabotka-na-sait"
                           className="link1"
                         >
-                          <Img
+                          <HomeImage
                             alt="Изработка на уеб сайт"
                             fluid={design}
                             className="homeImage"
                           />
                         </a>
-                      </figure>
+                      </Figure>
                       <h3>
                         <a
                           rel="bookmark"
@@ -200,27 +382,30 @@ class IndexPage extends Component {
                         Design is of utmost importance for the user's first
                         impression of the site.{' '}
                       </p>
-                    </div>
+                    </InnerBlock>
                   </article>
-                </Col>
+                </ColMaxHeight450>
 
-                <Col md={3} className="padding__none col__order-blog">
+                <ColMaxHeight450
+                  md={3}
+                  className="padding__none col__order-blog"
+                >
                   <article>
                     <section>
-                      <div className="page1-box1">
-                        <div className="inner1">
+                      <PageBox>
+                        <InnerBox>
                           <time dateTime="2012-09-05T15:31">
                             04 September 2018, 10:00
                           </time>
-                        </div>
+                        </InnerBox>
                         <h4>
-                          <a
+                          <H4A
                             rel="bookmark"
                             href="/blog/seo-odit-na-sait-nai-podrobnoto-rakovodstvo"
                             className="link1"
                           >
                             SEO site audit - the most comprehensive guide
-                          </a>
+                          </H4A>
                         </h4>
                         <p className="p6">
                           We have been offering SEO services for over a decade
@@ -229,23 +414,23 @@ class IndexPage extends Component {
                           hundreds of analyzed projects. There are many
                           materials on the subject. However, the larger ..
                         </p>
-                      </div>
+                      </PageBox>
                     </section>
                     <section>
-                      <div className="page1-box1">
-                        <div className="inner1">
+                      <PageBox>
+                        <InnerBox>
                           <time dateTime="2012-09-05T15:31">
                             5 Април 2018, 09:00
                           </time>
-                        </div>
+                        </InnerBox>
                         <h4>
-                          <a
+                          <H4A
                             rel="bookmark"
                             href="/blog/seo-odit-na-sait-nai-podrobnoto-rakovodstvo"
                             className="link1"
                           >
                             Mobile Site Optimization (mobile SEO)
-                          </a>
+                          </H4A>
                         </h4>
                         <p className="p6">
                           1. Mobile optimization What is optimization for mobile
@@ -253,14 +438,14 @@ class IndexPage extends Component {
                           website for smartphone and tablet users. Mobile SEO
                           also includes access to resources.
                         </p>
-                      </div>
+                      </PageBox>
                     </section>
                   </article>
-                </Col>
+                </ColMaxHeight450>
               </Row>
             </section>
             <aside>
-              <Row className="col__order-clients">
+              <Clients>
                 <Col md={12} className="margin__top-none">
                   <h2 className="h2Home">Some of our clients</h2>
                 </Col>
@@ -297,7 +482,7 @@ class IndexPage extends Component {
                     />
                   </p>
                 </Col>
-              </Row>
+              </Clients>
             </aside>
           </Grid>
         </main>
