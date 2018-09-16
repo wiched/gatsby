@@ -70,7 +70,7 @@ class IndexPage extends Component {
                     <Col md={12}>
                       <span className="homeCallTo">
                         <span className="homeWrapper">
-                          <Link to="/contacts">
+                          <Link to="/contact">
                             <div className="punchline">
                               Do you want your business to succeed on the
                               Internet? &nbsp;

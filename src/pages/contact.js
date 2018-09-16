@@ -13,7 +13,7 @@ class ContactPage extends Component {
     return (
       <Layout>
         <aside>
-          <Grid fluid className="headerWrapper headerWrapper__contact">
+          <Grid fluid className="headerWrapper__contact">
             <Grid>
               <Row className="full">
                 <Col md={9} className="headerTitle wow bounceInLeft">
