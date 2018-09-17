@@ -260,6 +260,7 @@ class IndexPage extends Component {
                   corporate websites, blogs, news websites. You can trust our
                   experience and desire to work.
                 </p>
+                <br />
                 <p>
                   We also offer
                   <strong> mobile apps for Android and IOS development</strong>,
@@ -268,6 +269,7 @@ class IndexPage extends Component {
                   networks, Pay Per Click, Video Seo, complete marketing
                   strategy.
                 </p>
+                <br />
                 <p>
                   And last but not least, we offer understanding, individual
                   approach, explanations, consultations and advice,

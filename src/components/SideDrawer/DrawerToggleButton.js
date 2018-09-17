@@ -15,6 +15,8 @@ const ToggleButton = styled.button`
   &::focus {
     outline: none;
   }
+  background-image: url(data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABkAAAAZCAYAAADE6YVjAAAAGXRFWHRTb2Z0d2FyZQBBZG9iZSBJbWFnZVJlYWR5ccllPAAAADhJREFUeNpi/P//PwOtARMDHQBdLGFBYtMq3BiHT3DRPU4YR4NrNAmPJuHRJDyahEeT8Ii3BCDAAF0WBj5Er5idAAAAAElFTkSuQmCC);
+  background-repeat: no-repeat;
 `
 
 const ButtonLine = styled.div`
@@ -29,11 +31,7 @@ const ButtonLine = styled.div`
 `
 
 const drawerToggleButton = props => (
-  <ToggleButton className="toggle-button" onClick={props.click}>
-    <ButtonLine />
-    <ButtonLine />
-    <ButtonLine />
-  </ToggleButton>
+  <ToggleButton className="toggle-button" onClick={props.click} />
 )
 
 export default drawerToggleButton

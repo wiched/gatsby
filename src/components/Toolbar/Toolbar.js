@@ -24,11 +24,12 @@ const Navigation = styled.nav`
   align-items: center;
 `
 const Logo = styled.div`
-  margin-left: 1rem;
+  margin-left: 1.3rem !important;
   & a {
     color: white !important;
     text-decoration: none;
-    font-size: 1.5rem;
+    font-size: 1.6rem;
+    font-family: 'Courier New', Courier, monospace;
   }
   @media (max-width: 768px) {
     & img {
