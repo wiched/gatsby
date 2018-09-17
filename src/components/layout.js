@@ -5,7 +5,6 @@ import { StaticQuery, graphql } from 'gatsby'
 import { injectGlobal } from 'styled-components'
 import Header from './header'
 import Footer from './footer'
-import 'typeface-open-sans'
 
 injectGlobal`
 * {
