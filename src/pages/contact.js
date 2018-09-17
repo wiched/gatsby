@@ -4,8 +4,8 @@ import { Grid, Row, Col } from 'react-flexbox-grid'
 import Img from 'gatsby-image'
 import styled from 'styled-components'
 
-import Layout from '../components/layout'
 import HeaderBG from '../images/contacts-slider.jpg'
+import Layout from '../components/layout'
 
 const H2 = styled.h2`
   margin-top: 0px;

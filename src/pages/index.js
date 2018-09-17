@@ -91,12 +91,38 @@ const H3A = styled.a`
     margin-left: 10px;
     margin-right: 10px;
   }
+  color: #2f2f2f;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
+  }
 `
 
 const H4A = styled.a`
   @media only screen and (max-width: 767px) {
     margin-left: 10px;
     margin-right: 10px;
+  }
+  color: #2f2f2f;
+  font-size: 15px;
+  font-weight: bold;
+  line-height: 20px;
+  text-decoration: none;
+  margin-top: 10px;
+  display: block;
+  &:hover {
+    text-decoration: underline;
+    text-decoration-line: underline;
+    text-decoration-style: initial;
+    text-decoration-color: initial;
   }
 `
 const HomeImage = styled(Img)`
@@ -286,11 +312,7 @@ class IndexPage extends Component {
                   <article>
                     <InnerBlock>
                       <Figure className="page1-img1">
-                        <a
-                          rel="bookmark"
-                          href="/uslugi/izrabotka-na-sait"
-                          className="link1"
-                        >
+                        <a rel="bookmark" href="/uslugi/izrabotka-na-sait">
                           <HomeImage fluid={{ ...webdev, sizes }} />
                         </a>
                       </Figure>
@@ -318,11 +340,7 @@ class IndexPage extends Component {
                   <article>
                     <InnerBlock>
                       <Figure className="page1-img1">
-                        <a
-                          rel="bookmark"
-                          href="/uslugi/izrabotka-na-sait"
-                          className="link1"
-                        >
+                        <a rel="bookmark" href="/uslugi/izrabotka-na-sait">
                           <HomeImage
                             alt="Изработка на уеб сайт"
                             fluid={seo}
@@ -354,11 +372,7 @@ class IndexPage extends Component {
                   <article>
                     <InnerBlock>
                       <Figure className="page1-img1">
-                        <a
-                          rel="bookmark"
-                          href="/uslugi/izrabotka-na-sait"
-                          className="link1"
-                        >
+                        <a rel="bookmark" href="/uslugi/izrabotka-na-sait">
                           <HomeImage
                             alt="Изработка на уеб сайт"
                             fluid={design}
