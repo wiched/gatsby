@@ -106,6 +106,12 @@ p {
 #logo:hover {
     color: white;
 }
+.side-drawer.open {
+  transform: translateX(0);
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
 
 .nav-links:hover {
     color: white;
